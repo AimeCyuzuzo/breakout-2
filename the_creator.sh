@@ -17,3 +17,16 @@ for FILE in "${COHORTS[@]}"; do
 	echo "$FILE created inside $DIRECTORY"
 done
 
+NAMES=("Alice" "Aime" "Cyuzuzo")
+
+for i in $(seq 5 7); do
+	FILE="$DIRECTORY/cohort-$i.txt"
+	
+	for ((j = 0; j < ${#NAMES[@]}; j++)); do
+		echo "${NAMES[j]}" >> "$FILE"
+	done
+
+	echo "Contents of $FILE"
+	cat "$FILE"
+	echo "........"
+done
